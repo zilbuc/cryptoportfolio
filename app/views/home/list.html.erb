@@ -1,0 +1,33 @@
+<h1>Listing 100 Cryptos</h1>
+
+<br/>
+
+<table class='table table-striped table-bordered table-hover'>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name, Symbol</th>
+      <th>Market Capitalization</th>
+      <th>Current Price</th>
+      <th>24h Trade Volume</th>
+      <th>7-day %</th>
+      <th>24h %</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for x in @lookup_list %>
+      <tr>
+        <td><%= x['rank'] %></td>
+        <td><%= x['name'] + ', ' + x['symbol'] %></td>
+        <td><%= number_to_currency(x['market_cap_usd']) %></td>
+        <td>$<%= x['price_usd'].to_d %></td>
+        <td><%= number_to_currency(x['24h_volume_usd'].to_d) %></td>
+        <td><%= x['percent_change_7d'] %>%</td>
+        <td><%= x['percent_change_24h'] %>%</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
