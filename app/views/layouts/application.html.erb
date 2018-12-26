@@ -7,14 +7,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
 
-    <%= link_to 'Home', root_path %> |
-    <%= link_to 'About Us', home_about_path %>
+    <%# render function to link with the partial (_navbar) %>
+    <%= render 'home/navbar' %>
+    <%= render 'home/flash' %>
 
-    <%= yield %>
+
+    <div class='container'>
+      <%= render 'home/flash' %>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

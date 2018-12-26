@@ -1,4 +1,13 @@
 <h1>Hello World!</h1>
 <p>this is my first rails webapp!!!</p>
 
-<%= @hello %>
+<%# '=' signs means you are showing element on the screen %>
+<% @coins %>
+<br/><br/>
+<% for x in @coins %>
+  <% for coin in @my_coins %>
+    <% if coin == x['symbol'] %>
+      <%= x['name']  %> : $<%= x['price_usd'] %><br/><br/>
+    <% end %>
+  <% end %>
+<% end %>
