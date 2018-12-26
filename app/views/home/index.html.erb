@@ -1,13 +1,6 @@
-<h1>Hello World!</h1>
-<p>this is my first rails webapp!!!</p>
+<h3>Crypto Currency Portfolio</h3>
 
-<%# '=' signs means you are showing element on the screen %>
-<% @coins %>
-<br/><br/>
-<% for x in @coins %>
-  <% for coin in @my_coins %>
-    <% if coin == x['symbol'] %>
-      <%= x['name']  %> : $<%= x['price_usd'] %><br/><br/>
-    <% end %>
-  <% end %>
-<% end %>
+<br/>
+
+<h4>This is demo version of crypto currency portfolio, built with Ruby On Rails.</h4>
+<h4>Actual market data is provided by <a href="https://coinmarketcap.com/api/">Coinmarketcap API</a>.</h4>

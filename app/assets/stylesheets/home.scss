@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
+  .alert {
+    color: #333333;
+    background-color: #F9F7F7;
+    border-color: #C5C3C3;
+  }
+
   .panel {
     .form-group {
       .form-control:focus {
@@ -15,11 +21,11 @@
 
     .panel-footer {
       a {
-        color: #d9534f;
+        color: #333333;
+      }
 
-        &:first-of-type {
-          color: #333333;
-        }
+      .footer-highlight {
+        color: #d9534f;
       }
     }
   }

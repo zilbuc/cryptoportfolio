@@ -42,8 +42,17 @@
           <%= f.submit "Update", class: "btn btn-danger" %>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
 
-      <h3>Cancel my account</h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Cancel my account</h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="form-group">
 
       <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 

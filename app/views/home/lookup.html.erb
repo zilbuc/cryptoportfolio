@@ -1,22 +1,36 @@
-<h3>Crypto Currency Lookup</h3>
-<br/>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Crypto Currency Lookup</h3>
+  </div>
+  <div class="panel-body">
 
-<%= form_tag home_lookup_path, :method => 'POST' do %>
-  <%= text_field_tag 'sym', nil, placeholder: 'Enter Crypto Symbol', size: 50 %>
-  <%= submit_tag 'Lookup Stock Quote' %>
-<% end %>
-
-<br/><br/>
-
-<% if @symbol %>
-  <% for x in @lookup_coin %>
-      <% if @symbol == x['symbol'] %>
-        <% @counter =+ %>
-        <%= x['name']  %> : $<%= x['price_usd'] %><br/>
-        Rank: <%= x['rank'] %><br/><br/>
+    <div class="form-group">
+      <%= form_tag home_lookup_path, :method => 'POST' do %>
+        <%= text_field_tag 'sym', nil, placeholder: 'Enter Crypto Symbol', size: 50, class: 'form-control' %><br/><br/>
+        <%= submit_tag 'Lookup Stock Quote', class: "btn btn-danger" %>
       <% end %>
-  <% end %>
-  <% if @counter == 0 %>
-    <%= 'Such Currency Does Not Exist In Our Database' %>
-  <% end %>
-<% end %>
+
+      <br/>
+
+      <% if @symbol %>
+        <% for x in @lookup_coin %>
+            <% if @symbol == x['symbol'] %>
+              <% @counter =+ %>
+              <h3><%= x['name']  %></h3><br/>
+              Market Capitalization Rank: <%= x['rank'] %><br/>
+              <%= 'Current price: ' %>$<%= x['price_usd'] %><br/>
+              7-day Change: <%= x['percent_change_7d'] %>%<br/>
+              1h Change: <%= x['percent_change_1h'] %>%<br/>
+            <% end %>
+        <% end %>
+        <% if @counter == 0 %>
+          <%= 'Such Currency Does Not Exist In Our Database' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+
+  </div>
+</div>
