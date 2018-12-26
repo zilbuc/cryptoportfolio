@@ -1,3 +1,26 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  .panel {
+    .form-group {
+      .form-control:focus {
+        border-color: #ccc;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(217, 83, 79, 0.7);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(217, 83, 79, 0.7);
+      }
+    }
+
+    .panel-footer {
+      a {
+        color: #d9534f;
+
+        &:first-of-type {
+          color: #333333;
+        }
+      }
+    }
+  }
+}
