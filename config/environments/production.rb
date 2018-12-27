@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # mailer for devise
-  # config.action_mailer.default_url_options = { host: 'actual_URL', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'crypto-ror.herokuapp.com/' }
 end
